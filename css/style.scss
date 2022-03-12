@@ -1,0 +1,246 @@
+// variabile
+$primary: #7f70c1;
+$secondary: #ccb1f4;
+$light: #faf2ff;
+$dark: #282440;
+// Font Import
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,400;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.container {
+  max-width: 1200px;
+  max-height: 1080px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+#header {
+  color: $light;
+  background:
+    /* top, transparent black, faked with gradient */ linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    /* bottom, image */ url('../images/Photo\ \(4\).jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  max-height: 1080px;
+
+  .navbar {
+    padding-top: 1rem;
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 7rem;
+      img {
+        height: 100%;
+      }
+      ul {
+        color: $light;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        li {
+          color: inherit;
+          list-style-type: none;
+          a {
+            color: inherit;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            border-bottom: 2px solid $light;
+            margin: 0 0.5rem;
+            transition: all 200ms ease-in-out;
+            &:hover {
+              background: $primary;
+              border-bottom: 2px solid transparent;
+            }
+            &.active {
+              background: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+  .heading {
+    .container {
+      min-height: calc(100vh - 8rem);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      div {
+        margin-bottom: 8rem;
+        width: 50%;
+        h4 {
+          font-size: 2rem;
+          color: $primary;
+          margin-bottom: 1rem;
+        }
+        h1 {
+          font-size: 5rem;
+          color: $secondary;
+          margin-bottom: 2rem;
+        }
+        p {
+          font-size: 1.3rem;
+          line-height: 2rem;
+          margin-bottom: 2rem;
+        }
+        .menu-btn {
+          padding: 1rem 2rem;
+          background-color: $primary;
+          color: $light;
+          border-radius: 10px;
+          font-weight: 600;
+          letter-spacing: 0.1rem;
+          border: 2px solid transparent;
+          text-decoration: none;
+          transition: all 200ms ease-in-out;
+          cursor: pointer;
+          &:hover {
+            background-color: transparent;
+            border: 2px solid $light;
+          }
+        }
+      }
+    }
+  }
+}
+.background {
+  background: url('../images/blob-scene-haikei\ \(3\).svg') center center/cover;
+}
+
+#story {
+  border-bottom: 20px dotted $dark;
+  color: $dark;
+  height: 50vh;
+  max-height: 1080px;
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: row;
+    img {
+      width: 30%;
+      border-radius: 10px;
+    }
+    .text {
+      margin-left: 2rem;
+      color: $dark;
+      h6 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: $primary;
+      }
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+
+        span {
+          color: $primary;
+        }
+      }
+      p {
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: $dark;
+      }
+    }
+  }
+}
+#offers {
+  height: 50vh;
+  max-height: 1080px;
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 1rem;
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+      width: 33.3%;
+      text-align: center;
+      background-color: $secondary;
+      padding: 2rem 3rem;
+      border-radius: 10px;
+      i {
+        font-size: 2rem;
+        color: $dark;
+        margin-bottom: 0.5rem;
+      }
+      h2 {
+        font-size: 2rem;
+        color: $dark;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        color: $dark;
+        font-weight: 500;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+#gallery {
+  padding-top: 2rem;
+  max-height: 100vh;
+  max-height: 1080px;
+  background-color: $dark;
+  color: $light;
+  .container {
+    max-width: 1300px;
+    h3 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .photo-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      padding-bottom: 4rem;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        border: 2px solid $secondary;
+      }
+    }
+  }
+}
+footer {
+  .copyright-text {
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    background-color: $light;
+    color: $dark;
+    font-size: 1.2rem;
+  }
+}
